@@ -34,11 +34,11 @@ def main():
         class_index = np.argmax(prediction)
 
         # Anda dapat mengganti label ini dengan label yang sesuai dengan model Anda
-        labels = ['Kelas 1', 'Kelas 2', 'Kelas 3']  # Sesuaikan dengan label spesifik model Anda
+        labels = ['Amphiprion clarkii', 'Chaetodon lunulatus', 'Chaetodon trifascialis']  # Sesuaikan dengan label spesifik model Anda
         predicted_label = labels[class_index]
         
-        st.write(f"Prediksi: {predicted_label}")
-        st.write(f"Probabilitas: {prediction[0][class_index]:.2f}")
+        st.write(f"Prediksi Label : {predicted_label}")
+        st.write(f"Probabilitas : {prediction[0][class_index]:.2f}")
 
 if __name__ == "__main__":
     main()
