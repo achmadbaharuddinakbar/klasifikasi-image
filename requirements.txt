@@ -1,5 +1,7 @@
+streamlit
 pandas
 numpy
 ImageDataGenerator
 tensorflow
 seaborn
+pillow
