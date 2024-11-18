@@ -47,8 +47,6 @@ def main():
         unsafe_allow_html=True
     )
 
-    st.write("Unggah gambar untuk diklasifikasikan oleh model.")
-
     uploaded_file = st.file_uploader("Pilih file gambar", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
