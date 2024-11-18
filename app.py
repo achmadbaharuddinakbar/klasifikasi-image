@@ -70,7 +70,7 @@ def main():
         predicted_label = labels[class_index]
 
         st.write("==================================================================================")
-        st.markdown(f"<p class='predictionLabel'>Prediksi : <strong>{predicted_label}</strong></p>", unsafe_allow_html=True)
+        st.markdown(f"<p>Prediksi : <strong class='predictionLabel'>{predicted_label}</strong></p>", unsafe_allow_html=True)
         st.markdown(f"<p class='predictionLabel'>Probabilitas : <strong>{prediction[0][class_index]:.2f}</strong></p>", unsafe_allow_html=True)
         st.write("==================================================================================")
 
