@@ -20,7 +20,7 @@ def main():
     st.title("🖼️ Klasifikasi Gambar dengan MobileNetV2")
     st.markdown(
         """
-        'Pada Klasifikasi ini menggunakan data spesies ikan yang memiliki 3 label : 
+        Pada Klasifikasi ini menggunakan data spesies ikan yang memiliki 3 label : 
         - Label 1 ( Amphiprion clarkii ) 
         - Label 2 ( Chaetodon lunulatus )
         - Label 3 ( Chaetodon trifascialis )
