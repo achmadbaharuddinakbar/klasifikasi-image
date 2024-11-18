@@ -58,7 +58,7 @@ def main():
         st.image(image, caption="Gambar yang diunggah", use_column_width=True)
         st.markdown("</div>", unsafe_allow_html=True)
         
-        st.write("\nMemproses gambar...")
+        st.warning("\nMemproses gambar...")
         processed_image = preprocess_image(image)
 
         # Prediksi gambar
@@ -73,6 +73,8 @@ def main():
         st.markdown(f" <h3> Prediksi : </h3> <p> <strong class='predictionLabel'>{predicted_label}</strong></p>", unsafe_allow_html=True)
         st.markdown(f" <h3> Probabilitas : </h3> <p> <strong class='predictionLabel'>{prediction[0][class_index]:.2f}</strong></p>", unsafe_allow_html=True)
         st.write("<hr>", unsafe_allow_html=True)
+
+        st.succes("Berhasil dekk!!")
 
 if __name__ == "__main__":
     main()
