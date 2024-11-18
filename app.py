@@ -17,7 +17,7 @@ def preprocess_image(image, target_size=(224, 224)):
 # Main Streamlit app
 def main():
     st.set_page_config(page_title="Klasifikasi Gambar", page_icon="🖼️", layout="centered")
-    st.title("🖼️ Klasifikasi Gambar dengan Model AI")
+    st.title("🖼️ Klasifikasi Gambar dengan MobileNetV2")
     st.markdown(
         """
         <style>
@@ -47,7 +47,9 @@ def main():
     if uploaded_file is not None:
         # Tampilkan gambar yang diunggah
         image = Image.open(uploaded_file)
-        st.image(image, caption="Gambar yang diunggah", use_column_width=True, class_name="uploadedImage")
+        st.markdown("<div class='uploadedImage'>", unsafe_allow_html=True)
+        st.image(image, caption="Gambar yang diunggah", use_column_width=True)
+        st.markdown("</div>", unsafe_allow_html=True)
         
         st.write("\nMemproses gambar...")
         processed_image = preprocess_image(image)
