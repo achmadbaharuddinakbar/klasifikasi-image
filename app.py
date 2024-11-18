@@ -47,7 +47,7 @@ def main():
         unsafe_allow_html=True
     )
 
-    uploaded_file = st.file_uploader("Pilih file gambar", type=["jpg", "jpeg", "png"])
+    uploaded_file = st.file_uploader("Upload Image :", type=["jpg", "jpeg", "png"])
 
     if uploaded_file is not None:
         # Tampilkan gambar yang diunggah
