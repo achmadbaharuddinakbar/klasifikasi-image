@@ -20,6 +20,13 @@ def main():
     st.title("🖼️ Klasifikasi Gambar dengan MobileNetV2")
     st.markdown(
         """
+        'Pada Klasifikasi ini menggunakan data spesies ikan yang memiliki 3 label : 
+        - Label 1 ( Amphiprion clarkii ) 
+        - Label 2 ( Chaetodon lunulatus )
+        - Label 3 ( Chaetodon trifascialis )
+        """)
+    st.markdown(
+        """
         <style>
         .reportview-container {
             background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
@@ -52,6 +59,7 @@ def main():
         st.markdown("</div>", unsafe_allow_html=True)
         
         st.write("\nMemproses gambar...")
+        st.write("==================================================================================")
         processed_image = preprocess_image(image)
 
         # Prediksi gambar
@@ -59,11 +67,12 @@ def main():
         class_index = np.argmax(prediction)
 
         # Anda dapat mengganti label ini dengan label yang sesuai dengan model Anda
-        labels = ['Kelas 1', 'Kelas 2', 'Kelas 3']  # Sesuaikan dengan label spesifik model Anda
+        labels = ['Label 1 ( Amphiprion clarkii )', 'Label 2 ( Chaetodon lunulatus )', 'Label 3 ( Chaetodon trifascialis )']  # Sesuaikan dengan label spesifik model Anda
         predicted_label = labels[class_index]
-        
-        st.markdown(f"<p class='predictionLabel'>Prediksi: <strong>{predicted_label}</strong></p>", unsafe_allow_html=True)
-        st.markdown(f"<p class='predictionLabel'>Probabilitas: <strong>{prediction[0][class_index]:.2f}</strong></p>", unsafe_allow_html=True)
+
+        st.write("==================================================================================")
+        st.markdown(f"<p class='predictionLabel'>Prediksi : <strong>{predicted_label}</strong></p>", unsafe_allow_html=True)
+        st.markdown(f"<p class='predictionLabel'>Probabilitas : <strong>{prediction[0][class_index]:.2f}</strong></p>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
