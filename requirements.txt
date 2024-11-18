@@ -5,3 +5,4 @@ ImageDataGenerator
 tensorflow
 seaborn
 pillow
+keras
