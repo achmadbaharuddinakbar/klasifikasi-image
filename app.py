@@ -69,10 +69,10 @@ def main():
         labels = ['Label 1 ( Amphiprion clarkii )', 'Label 2 ( Chaetodon lunulatus )', 'Label 3 ( Chaetodon trifascialis )']  # Sesuaikan dengan label spesifik model Anda
         predicted_label = labels[class_index]
 
-        st.write("<hr>")
+        st.write("<hr>", unsafe_allow_html=True)
         st.markdown(f" <h3> Prediksi : </h3> <p> <strong class='predictionLabel'>{predicted_label}</strong></p>", unsafe_allow_html=True)
         st.markdown(f" <h3> Probabilitas : </h3> <p> <strong class='predictionLabel'>{prediction[0][class_index]:.2f}</strong></p>", unsafe_allow_html=True)
-        st.write("<hr>")
+        st.write("<hr>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
