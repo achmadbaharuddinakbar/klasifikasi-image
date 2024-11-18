@@ -16,7 +16,30 @@ def preprocess_image(image, target_size=(224, 224)):
 
 # Main Streamlit app
 def main():
-    st.title("Klasifikasi Gambar")
+    st.set_page_config(page_title="Klasifikasi Gambar", page_icon="🖼️", layout="centered")
+    st.title("🖼️ Klasifikasi Gambar dengan Model AI")
+    st.markdown(
+        """
+        <style>
+        .reportview-container {
+            background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .uploadedImage {
+            border: 2px solid #1f77b4;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .predictionLabel {
+            font-size: 1.2rem;
+            color: #1f77b4;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
     st.write("Unggah gambar untuk diklasifikasikan oleh model.")
 
     uploaded_file = st.file_uploader("Pilih file gambar", type=["jpg", "jpeg", "png"])
@@ -24,7 +47,7 @@ def main():
     if uploaded_file is not None:
         # Tampilkan gambar yang diunggah
         image = Image.open(uploaded_file)
-        st.image(image, caption="Gambar yang diunggah", use_column_width=True)
+        st.image(image, caption="Gambar yang diunggah", use_column_width=True, class_name="uploadedImage")
         
         st.write("\nMemproses gambar...")
         processed_image = preprocess_image(image)
@@ -34,11 +57,11 @@ def main():
         class_index = np.argmax(prediction)
 
         # Anda dapat mengganti label ini dengan label yang sesuai dengan model Anda
-        labels = ['Amphiprion clarkii', 'Chaetodon lunulatus', 'Chaetodon trifascialis']  # Sesuaikan dengan label spesifik model Anda
+        labels = ['Kelas 1', 'Kelas 2', 'Kelas 3']  # Sesuaikan dengan label spesifik model Anda
         predicted_label = labels[class_index]
         
-        st.write(f"Prediksi Label : {predicted_label}")
-        st.write(f"Probabilitas : {prediction[0][class_index]:.2f}")
+        st.markdown(f"<p class='predictionLabel'>Prediksi: <strong>{predicted_label}</strong></p>", unsafe_allow_html=True)
+        st.markdown(f"<p class='predictionLabel'>Probabilitas: <strong>{prediction[0][class_index]:.2f}</strong></p>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
