@@ -8,6 +8,7 @@ model = tf.keras.models.load_model('model.h5')  # Ganti dengan path model Anda j
 
 # Function to preprocess the image
 def preprocess_image(image, target_size=(224, 224)):
+    image = image.convert("RGB")  # Convert image to RGB
     image = ImageOps.fit(image, target_size, Image.Resampling.LANCZOS)
     image = np.asarray(image)
     image = image / 255.0  # Normalisasi
