@@ -71,7 +71,7 @@ def main():
 
         st.write("<hr>", unsafe_allow_html=True)
         st.markdown(f" <h3> Prediksi : </h3> <p> <strong class='predictionLabel'>{predicted_label}</strong></p>", unsafe_allow_html=True)
-        st.markdown(f" <h3> Probabilitas : </h3> <p> <strong class='predictionLabel'>{prediction[0][class_index]:.2f}</strong></p>", unsafe_allow_html=True)
+        st.markdown(f" <h3> Probabilitas : </h3> <p> <strong class='predictionLabel'>{prediction[0][class_index]:.2f} % </strong></p>", unsafe_allow_html=True)
         st.write("<hr>", unsafe_allow_html=True)
 
         st.success("Berhasil dekk!!")
